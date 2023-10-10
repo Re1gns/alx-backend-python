@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+'''Task 2's module.'''
+
 import asyncio
 import time
 from importlib import import_module as using
@@ -7,7 +9,8 @@ from importlib import import_module as using
 async_comprehension = using('1-async_comprehension').async_comprehension
 
 async def measure_runtime() -> float:
-    '''Executes async_comprehension 4 times and measures the
+    '''
+    Executes async_comprehension 4 times and measures the
     total execution time.
     '''
     start_time = time.time()
@@ -19,4 +22,4 @@ if __name__ == "__main__":
     total_runtime = loop.run_until_complete(measure_runtime())
     loop.close()
 
-    print(f"Total runtime: {total_runtime:.2f} seconds")
+    print(f"Total runtime: {total_runtime:.15f} seconds")
